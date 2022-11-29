@@ -1,0 +1,150 @@
+// Menu
+
+.menu {
+    display: flex;
+    justify-content: center;
+
+    &--margin-bottom {
+        margin-bottom: 50px;
+    }
+}
+
+.menu__item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.menu__btn {
+    @extend %btn;
+
+    padding: 6px 22px;
+
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    line-height: 1.62;
+    color: $secondary-text-color;
+
+    background-color: $secondary-white;
+    box-shadow: none;
+
+    transition: background-color 250ms $timing-function,
+    color 250ms $timing-function, box-shadow 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+        color: $primary-white;
+
+        background-color: $accent-color;
+        box-shadow: 0px 3px 1px $fourth-shadow-color,
+            0px 1px 2px $fifth-shadow-color, 0px 2px 2px $first-shadow-color;
+    }
+
+    &--selected {
+        color: $primary-white;
+
+        background-color: $accent-color;
+        box-shadow: 0px 3px 1px $fourth-shadow-color,
+            0px 1px 2px $fifth-shadow-color, 0px 2px 2px $first-shadow-color;
+    }
+
+    &--size-s {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+// Gallery
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc((100% - 60px) / 3);
+
+    &--margin {
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    &:nth-last-child(-n + 3) {
+        margin-bottom: 0;
+    }
+}
+
+.card__link {
+    display: block;
+
+    text-decoration: none;
+    color: $primary-text-color;
+
+    transition: box-shadow 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0px 1px 1px $first-shadow-color,
+            0px 4px 4px $sixth-shadow-color,
+            1px 4px 6px $seventh-shadow-color;
+    }
+}
+
+.card__thumb {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.card__img {
+    display: block;
+}
+
+.card__overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 63px 24px;
+
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: $primary-white;
+
+    background-color: $card-overlay-color;
+    transform: translateY(0);
+
+    transition: transform 250ms $timing-function;
+
+    .card__link:hover &,
+    .card__link:focus & {
+        transform: translateY(-100%);
+    }
+}
+
+.meta {
+    padding: 20px 24px;
+
+    border: 1px solid $portfolio-border-color;
+    border-top: 0;
+}
+
+.meta__title {
+    margin-bottom: 4px;
+
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    line-height: 2;
+    color: $secondary-text-color;
+}
+
+.meta__text {
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    line-height: 1.88;
+}

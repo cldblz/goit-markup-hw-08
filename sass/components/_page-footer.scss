@@ -1,0 +1,138 @@
+.page-footer {
+    padding-top: 45px;
+    padding-bottom: 60px;
+
+    background-color: $secondary-bg-color;
+}
+
+.page-footer__wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+.page-footer__contacts {
+    margin-right: 70px;
+}
+
+.page-footer__logo {
+    margin-bottom: 20px;
+}
+
+.address__link {
+    @extend %link;
+
+    font-style: normal;
+    line-height: 1.71;
+    color: $footer-address-color;
+
+    &--white {
+        color: $primary-white;
+    }
+}
+
+.address__item:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.page-footer__social {
+    margin-right: 93px;
+}
+
+.page-footer__title {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    line-height: 1.14;
+    text-transform: uppercase;
+
+    color: $primary-white;
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-links__item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-links__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    transition: background-color 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+        background-color: $accent-color;
+    }
+
+    &--white {
+        color: $primary-white;
+        background-color: $icon-bg-color;
+    }
+
+    &--gray {
+        color: $icon-color;
+
+        transition: color 250ms $timing-function,
+            background-color 250ms $timing-function;
+
+        &:hover,
+        &:focus {
+            color: $primary-white;
+        }
+    }
+}
+
+.icon {
+    --color1: currentColor;
+}
+
+.page-footer__form {
+    display: flex;
+}
+
+.page-footer__input {
+    padding-left: 16px;
+    margin-right: 12px;
+    width: 358px;
+    height: 50px;
+
+    border: 1px solid $subscription-border-color;
+    border-radius: 4px;
+    background-color: transparent;
+
+    color: $primary-white;
+}
+
+.page-footer__btn {
+    @extend %btn;
+
+    position: relative;
+
+    width: 200px;
+    height: 50px;
+    padding: 10px 62px 10px 28px;
+
+    transition: box-shadow 250ms $timing-function;
+
+    &:hover {
+        box-shadow: 0px 4px 4px $eighth-shadow-color;
+    }
+
+    &:active {
+        background-color: $active-button-color;
+    }
+}
+
+.page-footer__icon {
+    position: absolute;
+    top: 13px;
+    right: 28px;
+}
