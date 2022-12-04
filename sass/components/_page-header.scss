@@ -1,56 +1,111 @@
 .page-header {
     border-bottom: 1px solid $header-border-color;
+    position: relative;
 }
 
 .page-header__wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+
+
+    @media (max-width:767px) {
+        justify-content: space-between;
+    }
+
+    @media (min-width:$tablet) {
+
+    }
 }
 
 .nav {
-    display: flex;
-    align-items: center;
+    @media (min-width:$tablet) {
+        display: flex;
+        margin-right: 96px;
+    }
+
+    @media (min-width:$desktop) {
+        margin-right: 315px;
+    }
 }
 
 .logo {
     display: block;
 
-    font-size: 26px;
     font-family: $secondary-font;
     font-weight: 700;
+    font-size: 24px;
+    line-height: 1.17;
     letter-spacing: 0.03em;
-    line-height: 1.19;
+
     color: $header-logo-color;
     text-decoration: none;
 
     &--white {
         color: $primary-white;
     }
+
+    @media (min-width:$desktop) {
+        font-size: 26px;
+        line-height: 1.19;
+
+    }
 }
 
-.nav__logo {
-    padding-top: 24px;
-    padding-bottom: 24px;
-    margin-right: 93px;
+.page-header__logo {
+    padding-top: 16px;
+    padding-bottom: 15px;
+
+    @media (min-width:$tablet) {
+        padding-top: 26px;
+        padding-bottom: 25px;
+        margin-right: 87px;
+    }
+
+    @media (min-width:$desktop) {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        margin-right: 92px;
+    }
 }
 
 .logo__part {
     color: $accent-color;
 }
 
+.menu-container__wrapper {
+    @media (min-width:$tablet) {
+        display: flex;
+        align-items: center;
+    }
+}
+
 .nav__list {
-    display: flex;
+    @media (min-width:$tablet) {
+        display: flex;
+    }
 }
 
 .nav__item:not(:last-child) {
-    margin-right: 50px;
+    @media (max-width:767px) {
+        margin-bottom: 32px;
+    }
+    @media (min-width:$tablet) {
+        margin-right: 51px;
+    }
+}
+
+.nav__item:last-child {
+    @media (max-width:767px) {
+        margin-bottom: 306px;
+    }
 }
 
 .nav__link,
 .contacts-list__link {
-    padding-top: 32px;
-    padding-bottom: 31px;
+    @media (min-width:$tablet) {
+        padding-top: 32px;
+        padding-bottom: 31px;
+    }
 }
 
 .nav__link {
@@ -60,52 +115,220 @@
 
     font-weight: 500;
     letter-spacing: 0.02em;
-    line-height: 1.14;
+    font-size: 40px;
+    line-height: 1.18;
     color: $secondary-text-color;
 
-    &--active {
-        position: relative;
+    @media (max-width:767px) {
+        &:hover, &:focus {
+            color: $accent-color;
+        }
+    }
 
-        color: $accent-color;
+    @media (min-width:$tablet) {
+        line-height: 1.14;
+        font-size: 14px;
 
-        &::after {
-            position: absolute;
-            bottom: -1px;
-            left: 0;
+        &--active {
+                position: relative;
 
-            display: inline-block;
-            height: 4px;
-            width: 100%;
+                color: $accent-color;
 
-            content: "";
+                &::after {
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
 
-            background-color: $accent-color;
-            border-radius: 2px;
+                    display: inline-block;
+                    height: 4px;
+                    width: 100%;
+
+                    content: "";
+
+                    background-color: $accent-color;
+                    border-radius: 2px;
+                }
         }
     }
 }
 
 .contacts {
     display: flex;
+
+
+    @media (max-width:767px) {
+        flex-direction: column-reverse;
+    }
+
+    @media (min-width:$tablet) and (max-width:1199px) {
+        flex-direction: column;
+    }
 }
 
 .contacts__item:not(:last-child) {
-    margin-right: 50px;
+    @media (max-width:767px) {
+        margin-bottom: 64px;
+    }
+
+    @media (min-width:$tablet) and (max-width:1199px) {
+        margin-bottom: 10px;
+    }
+
+    @media (min-width:$desktop) {
+        margin-right: 30px;
+    }
+}
+
+.contacts__item:last-child {
+    @media (max-width:767px) {
+        margin-bottom: 32px;
+    }
+
 }
 
 .contacts__link {
     @extend %link;
+
     display: flex;
     align-items: center;
 
     font-weight: 500;
     letter-spacing: 0.02em;
-    line-height: 1.14;
     color: $primary-text-color;
+
+    @media (min-width:$tablet) {
+        font-size: 12px;
+        line-height: 1.17;
+    }
+
+    @media (min-width:$desktop) {
+        font-size: 14px;
+        line-height: 1.14;
+    }
+
+    @media (max-width:767px) {
+        &--tel {
+            font-size: 34px;
+            line-height: 1.18;
+            color: $accent-color;
+        }
+
+        &--mail {
+            font-size: 24px;
+            line-height: 1.17;
+        }
+    }
 }
 
 .contacts__icon {
-    margin-right: 10px;
+    @media (max-width:767px) {
+        display: none;
+    }
+
+    margin-right: 8px;
 
     --color4: currentColor;
+
+    @media (min-width:$desktop) {
+        margin-right: 10px;
+    }
+
+    &--mail {
+        @media (max-width:1199px) {
+            width: 14px;
+            height: 10px;
+        }
+    }
+
+    &--tel {
+        @media (max-width:1199px) {
+            width: 10px;
+            height: 14px;
+        }
+    }
+}
+
+.page-header__btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+
+    &.is-open {
+        position: absolute;
+        z-index: 1;
+        right: 3%;
+    }
+
+    &:hover, &:focus {
+        fill: $accent-color;
+    }
+
+    @media (min-width:$tablet) {
+        display: none;
+    }
+}
+
+.page-header__cross,
+.page-header__btn.is-open .page-header__menu {
+    display: none;
+}
+
+.page-header__btn.is-open .page-header__cross {
+    display: block;
+}
+
+.menu-container {
+    @media (max-width:767px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        padding: 48px 40px;
+        width: 100%;
+
+        background-color: $primary-white;
+        transform: translateY(-100%);
+    }
+}
+
+.menu-container.is-open {
+    transform: translateY(0);
+    transition: transform 250ms $timing-function;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width:767px) {
+        display: none;
+    }
+}
+
+.social__item:not(:last-child) {
+    position: relative;
+    margin-right: 20px;
+
+    &::after {
+        position: absolute;
+        right: -10px;
+        content: "";
+        display: inline-block;
+        height: 22px;
+        width: 1px;
+        background-color: rgba(33, 33, 33, 0.2);
+    }
+}
+
+.social__link {
+    @extend %link;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+    color: $accent-color;
 }

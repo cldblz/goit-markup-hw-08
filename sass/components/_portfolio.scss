@@ -2,15 +2,52 @@
 
 .menu {
     display: flex;
-    justify-content: center;
+
+    @media (max-width:767px) {
+        flex-wrap: wrap;
+    }
+
+    @media (min-width:$tablet) {
+        justify-content: center;
+    }
 
     &--margin-bottom {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
+
+        @media (min-width:$tablet) {
+            margin-bottom: 30px;
+        }
+
+        @media (min-width:$desktop) {
+            margin-bottom: 50px;
+        }
     }
 }
 
-.menu__item:not(:last-child) {
-    margin-right: 8px;
+.menu__section {
+    display: flex;
+}
+
+.menu__first-wrapper {
+    display: flex;
+
+    @media (max-width:767px) {
+        margin-bottom: 15px;
+    }
+
+    @media (min-width:$tablet) {
+        margin-right: 8px;
+    }
+}
+
+.menu__second-wrapper {
+    display: flex;
+}
+
+.menu__item {
+    &:not(:last-child) {
+        margin-right: 8px;
+    }
 }
 
 .menu__btn {
@@ -60,19 +97,49 @@
 }
 
 .card {
-    width: calc((100% - 60px) / 3);
+    width: 450px;
 
-    &--margin {
-        margin-right: 30px;
-        margin-bottom: 30px;
+    @media (max-width:767px) {
+        &--margin {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
     }
 
-    &:nth-child(3n) {
-        margin-right: 0;
+    @media (min-width:$tablet) and (max-width:1199px) {
+        width: calc((100% - 30px) / 2);
+
+        &--margin {
+            margin-right: 30px;
+            margin-bottom: 30px;
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+
+            &:nth-last-child(-n + 1) {
+                margin-bottom: 0;
+            }
+
+        }
     }
 
-    &:nth-last-child(-n + 3) {
-        margin-bottom: 0;
+    @media (min-width:$desktop) {
+        width: calc((100% - 60px) / 3);
+
+        &--margin {
+            margin-right: 30px;
+            margin-bottom: 30px;
+        }
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        &:nth-last-child(-n + 3) {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -132,6 +199,12 @@
 
     border: 1px solid $portfolio-border-color;
     border-top: 0;
+
+    @media (min-width:$tablet) and (max-width:1199px) {
+        &--padding {
+            padding-bottom: 56px;
+        }
+    }
 }
 
 .meta__title {

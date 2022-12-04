@@ -19,6 +19,10 @@ ul {
     padding: 0;
 }
 
+img {
+    display: block;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -34,11 +38,22 @@ ul {
 }
 
 .container {
-    width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+
+    @media (min-width:$mobile) {
+        width: $mobile;
+    }
+
+    @media (min-width: $tablet) {
+        width: $tablet;
+    }
+
+    @media (min-width: $desktop) {
+        width: $desktop;
+    }
 }
 
 .list {
