@@ -604,6 +604,16 @@ img {
   display: block;
 }
 
+body.modal-open,
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+.menu-container.is-open {
+  transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: scroll;
+}
 @media (max-width: 767px) {
   .menu-container {
     position: absolute;
@@ -615,11 +625,6 @@ img {
     background-color: #ffffff;
     transform: translateY(-100%);
   }
-}
-
-.menu-container.is-open {
-  transform: translateY(0);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social {
@@ -891,23 +896,19 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-image: linear-gradient(rgba(47, 48, 50, 0.4), rgba(47, 48, 50, 0.4)), url(../images/bg-s.jpg);
 }
-@media (max-width: 480px) {
-  .hero {
-    background-image: linear-gradient(rgba(47, 48, 50, 0.4), rgba(47, 48, 50, 0.4)), url(../images/bg-s.jpg);
-  }
-}
-@media (max-width: 480px) and (min-device-pixel-ratio: 2), (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 480px) and (min-resolution: 192dpi), (max-width: 480px) and (min-resolution: 2dppx) {
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero {
     background-image: linear-gradient(rgba(47, 48, 50, 0.4), rgba(47, 48, 50, 0.4)), url(../images/bg-s@2x.jpg);
   }
 }
-@media (max-width: 768px) {
+@media (min-width: 481px) {
   .hero {
     background-image: linear-gradient(rgba(47, 48, 50, 0.4), rgba(47, 48, 50, 0.4)), url(../images/bg-m.jpg);
   }
 }
-@media (max-width: 768px) and (min-device-pixel-ratio: 2), (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 768px) and (min-resolution: 192dpi), (max-width: 768px) and (min-resolution: 2dppx) {
+@media (min-width: 481px) and (min-device-pixel-ratio: 2), (min-width: 481px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 481px) and (min-resolution: 192dpi), (min-width: 481px) and (min-resolution: 2dppx) {
   .hero {
     background-image: linear-gradient(rgba(47, 48, 50, 0.4), rgba(47, 48, 50, 0.4)), url(../images/bg-m@2x.jpg);
   }
