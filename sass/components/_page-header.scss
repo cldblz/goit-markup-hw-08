@@ -279,7 +279,18 @@
     display: block;
 }
 
+body.modal-open,
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
 .menu-container {
+    &.is-open {
+        transform: translateY(0);
+        transition: transform 250ms $timing-function;
+        overflow-y: scroll;
+    }
+
     @media (max-width:767px) {
         position: absolute;
         top: 0;
@@ -292,11 +303,6 @@
         background-color: $primary-white;
         transform: translateY(-100%);
     }
-}
-
-.menu-container.is-open {
-    transform: translateY(0);
-    transition: transform 250ms $timing-function;
 }
 
 .social {

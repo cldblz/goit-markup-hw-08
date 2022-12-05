@@ -52,16 +52,13 @@
     background-position: center;
     background-size: cover;
 
-    @media (max-width:$mobile) {
-        background-image: linear-gradient($overlay-color, $overlay-color), url(../images/bg-s.jpg);
+    background-image: linear-gradient($overlay-color, $overlay-color), url(../images/bg-s.jpg);
 
-        @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-            background-image: linear-gradient($overlay-color, $overlay-color), url(../images/bg-s@2x.jpg);
-        }
-
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: linear-gradient($overlay-color, $overlay-color), url(../images/bg-s@2x.jpg);
     }
 
-    @media (max-width:$tablet) {
+    @media (min-width:481px) {
         background-image: linear-gradient($overlay-color, $overlay-color), url(../images/bg-m.jpg);
 
         @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
