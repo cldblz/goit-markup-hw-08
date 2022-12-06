@@ -935,13 +935,18 @@ body.mobile-menu-open {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 360px;
+  width: 300px;
   font-size: 26px;
   font-weight: 900;
   line-height: 1.62;
   letter-spacing: 0.06em;
   color: #ffffff;
   text-transform: uppercase;
+}
+@media (min-width: 480px) {
+  .hero__title {
+    width: 360px;
+  }
 }
 @media (min-width: 1200px) {
   .hero__title {
