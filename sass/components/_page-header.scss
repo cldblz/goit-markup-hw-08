@@ -96,7 +96,7 @@
 
 .nav__item:last-child {
     @media (max-width:767px) {
-        margin-bottom: 306px;
+        margin-bottom: 30vh;
     }
 }
 
@@ -216,6 +216,12 @@
         &--mail {
             font-size: 24px;
             line-height: 1.17;
+        }
+    }
+
+    @media (max-width:376px) {
+        &--tel {
+            font-size: 24px;
         }
     }
 }

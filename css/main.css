@@ -433,7 +433,7 @@ img {
 
 @media (max-width: 767px) {
   .nav__item:last-child {
-    margin-bottom: 306px;
+    margin-bottom: 30vh;
   }
 }
 
@@ -544,6 +544,11 @@ img {
   .contacts__link--mail {
     font-size: 24px;
     line-height: 1.17;
+  }
+}
+@media (max-width: 376px) {
+  .contacts__link--tel {
+    font-size: 24px;
   }
 }
 
